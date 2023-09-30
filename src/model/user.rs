@@ -2,7 +2,7 @@ use serde::{Deserialize, Serialize};
 
 use super::role::Role;
 
-#[derive(Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct User {
     pub uid: String,
     pub name: String,
@@ -16,6 +16,13 @@ pub struct NewUser {
     pub email: String,
     pub role: Option<Role>,
     pub pw: String,
+}
+
+pub struct UpdateUser {
+    pub name: Option<String>,
+    pub email: Option<String>,
+    pub role: Option<Role>,
+    pub pw: Option<String>,
 }
 
 impl User {
@@ -34,5 +41,24 @@ impl User {
                 Role::User
             },
         }
+    }
+
+    pub fn update(mut self, req: UpdateUser) -> Self {
+        if let Some(name) = req.name {
+            self.name = name
+        }
+
+        if let Some(email) = req.email {
+            self.email = email
+        }
+
+        if let Some(pw) = req.pw {
+            self.pw = pw
+        }
+
+        if let Some(role) = req.role {
+            self.role = role
+        }
+        self
     }
 }
