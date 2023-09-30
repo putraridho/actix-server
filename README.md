@@ -55,7 +55,7 @@ cargo build
 cargo run
 ```
 
-### Usage
+## Usage
 
 Actix-Server is designed for creating high-performance web services. You can create custom routes and endpoints to serve your specific application needs. Here's an example of how to define a basic route:
 
@@ -79,7 +79,7 @@ async fn main() -> std::io::Result<()> {
 }
 ```
 
-### License
+## License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ```
