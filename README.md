@@ -57,7 +57,7 @@ cargo run
 
 ## Usage
 
-Actix-Server is designed for creating high-performance web services. You can create custom routes and endpoints to serve your specific application needs. Here's an example of how to define a basic route:
+You can create custom routes and endpoints to serve your specific application needs. Here's an example of how to define a basic route:
 
 ```rust
 use actix_web::{get, web, App, HttpResponse, HttpServer};
